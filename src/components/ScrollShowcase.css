@@ -1,0 +1,551 @@
+/* ============================================================================
+   ScrollShowcase.css — Authored choreography on top of engine/scrollcraft.css
+   ============================================================================ */
+
+.showcase {
+  position: relative;
+  width: 100%;
+  color: #f1f5f9;
+  text-align: left;
+}
+
+/* Sticky topbar */
+.showcase-topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--sc-z-chrome);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem var(--sc-gutter);
+  background: rgba(11, 19, 32, 0.78);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.showcase-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-weight: 700;
+  font-size: 0.92rem;
+  color: #f8fafc;
+}
+
+.showcase-brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: #14b8a6;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.22);
+}
+
+.showcase-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.showcase-btn-ghost {
+  appearance: none;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: rgba(15, 23, 42, 0.5);
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color var(--sc-d-fast) var(--sc-ease-out),
+    border-color var(--sc-d-fast) var(--sc-ease-out);
+}
+
+.showcase-btn-ghost:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(148, 163, 184, 0.65);
+}
+
+.showcase-btn-mini {
+  appearance: none;
+  border: 1px solid #14b8a6;
+  background: #14b8a6;
+  color: #042f2e;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color var(--sc-d-fast) var(--sc-ease-out),
+    transform var(--sc-d-fast) var(--sc-ease-out);
+}
+
+.showcase-btn-mini:hover {
+  background: #2dd4bf;
+  transform: translateY(-1px);
+}
+
+.showcase-eyebrow {
+  display: inline-block;
+  color: #5eead4;
+  background: rgba(20, 184, 166, 0.14);
+  border: 1px solid rgba(94, 234, 212, 0.25);
+  padding: 0.28rem 0.72rem;
+  border-radius: 999px;
+}
+
+.showcase-eyebrow--light {
+  color: #0f766e;
+  background: #f0fdfa;
+  border-color: #99f6e4;
+}
+
+/* ================================================================= ACTO 1 == */
+.showcase-act--hero {
+  position: relative;
+  min-height: 92svh;
+  display: flex;
+  align-items: center;
+  overflow: clip;
+  padding-block: clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.hero-plane {
+  position: absolute;
+  inset: -12% -6%;
+  pointer-events: none;
+}
+
+.hero-plane--grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 45%, #000 25%, transparent 80%);
+}
+
+.hero-plane--glow {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(20, 184, 166, 0.24), transparent 44%),
+    radial-gradient(circle at 84% 72%, rgba(16, 185, 129, 0.18), transparent 46%);
+}
+
+.showcase-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+}
+
+.showcase-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.showcase-hero-title {
+  color: #f8fafc;
+  font-weight: 700;
+  max-width: 15ch;
+}
+
+.showcase-accent-text {
+  color: #2dd4bf;
+}
+
+.showcase-hero-lede {
+  color: #cbd5e1;
+}
+
+.showcase-hero-scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.75rem;
+  color: #94a3b8;
+}
+
+.showcase-scroll-line {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, #2dd4bf, transparent);
+}
+
+.hero-telemetry-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.telemetry-card {
+  background: rgba(15, 23, 42, 0.76);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: var(--sc-r-lg);
+  padding: 1.4rem 1.5rem;
+  box-shadow: var(--sc-e2), var(--sc-edge);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.telemetry-card--danger {
+  border-left: 3px solid #f87171;
+}
+
+.telemetry-card--ok {
+  border-left: 3px solid #2dd4bf;
+}
+
+.telemetry-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.7rem;
+}
+
+.telemetry-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: 999px;
+}
+
+.telemetry-tag--danger {
+  background: rgba(239, 68, 68, 0.18);
+  color: #fca5a5;
+}
+
+.telemetry-tag--ok {
+  background: rgba(20, 184, 166, 0.2);
+  color: #5eead4;
+}
+
+.telemetry-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: #f8fafc;
+}
+
+.telemetry-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #cbd5e1;
+}
+
+/* ================================================================= ACTO 2 == */
+.showcase-pin-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.showcase-pin-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 4.5rem 2.5rem;
+}
+
+.showcase-pin-chrome {
+  position: absolute;
+  top: 4.5rem;
+  inset-inline: var(--sc-gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  z-index: 30;
+}
+
+.pin-progress-track {
+  width: min(220px, 38vw);
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.24);
+  overflow: hidden;
+}
+
+.pin-progress-fill {
+  height: 100%;
+  width: calc(var(--sc-p, 0) * 100%);
+  background: #2dd4bf;
+  border-radius: 999px;
+}
+
+.pin-scene {
+  position: absolute;
+  inset-inline: var(--sc-gutter);
+  top: 52%;
+  translate: 0 -50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.showcase-pin-title {
+  color: #f8fafc;
+  font-weight: 700;
+  max-width: 24ch;
+}
+
+.showcase-pin-body {
+  color: #cbd5e1;
+}
+
+.showcase-formula {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) auto minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.formula-term {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.25rem 1rem;
+  border-radius: var(--sc-r-md);
+  background: rgba(15, 23, 42, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  text-align: center;
+  box-shadow: var(--sc-edge);
+}
+
+.formula-term--result {
+  background: rgba(13, 148, 136, 0.22);
+  border-color: rgba(94, 234, 212, 0.5);
+}
+
+.formula-term--committed {
+  background: rgba(217, 119, 6, 0.16);
+  border-color: rgba(251, 191, 36, 0.42);
+}
+
+.formula-value {
+  font-size: clamp(2.1rem, 4.2vw, 3.3rem);
+  line-height: 1;
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.formula-term--result .formula-value {
+  color: #5eead4;
+}
+
+.formula-term--committed .formula-value {
+  color: #fcd34d;
+}
+
+.formula-hint {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.formula-operator {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #5eead4;
+  text-align: center;
+  user-select: none;
+}
+
+.formula-bar-wrap {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.formula-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.formula-bar-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.22);
+  overflow: hidden;
+}
+
+.formula-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #14b8a6, #f59e0b);
+  border-radius: 999px;
+}
+
+/* Peak cue (Cue 2) */
+.peak-badge {
+  align-self: flex-start;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.78rem;
+  border-radius: 999px;
+  background: rgba(239, 68, 68, 0.2);
+  border: 1px solid rgba(248, 113, 113, 0.45);
+  color: #fecaca;
+}
+
+.peak-transitions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.peak-rule {
+  background: rgba(15, 23, 42, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  border-radius: var(--sc-r-md);
+  padding: 1.15rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.peak-rule strong {
+  font-size: 1.05rem;
+  color: #5eead4;
+}
+
+.peak-rule p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: #cbd5e1;
+}
+
+/* ================================================================= ACTO 3 == */
+.showcase-act--cta {
+  color: #0f172a;
+}
+
+.cta-surface {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--sc-r-lg);
+  padding: clamp(2rem, 5vw, 3.75rem);
+  box-shadow: 0 24px 54px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.cta-title {
+  color: #0f172a;
+  font-weight: 800;
+  max-width: 22ch;
+}
+
+.cta-body {
+  color: #475569;
+}
+
+.cta-actions {
+  margin-top: 0.5rem;
+}
+
+.showcase-btn-primary {
+  appearance: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  background: #0d9488;
+  color: #ffffff;
+  font-size: 1.02rem;
+  font-weight: 700;
+  padding: 0.95rem 1.75rem;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 12px 26px rgba(13, 148, 136, 0.32);
+  transition: background-color var(--sc-d-fast) var(--sc-ease-out),
+    box-shadow var(--sc-d-fast) var(--sc-ease-out);
+}
+
+.showcase-btn-primary:hover {
+  background: #0f766e;
+  box-shadow: 0 16px 32px rgba(13, 148, 136, 0.42);
+}
+
+/* ================================================================ MOBILE == */
+@media (max-width: 860px) {
+  .showcase-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-pin-chrome {
+    top: 4.2rem;
+  }
+
+  .showcase-formula {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .formula-operator {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  .formula-term {
+    padding: 0.85rem 0.9rem;
+  }
+
+  .peak-transitions {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .peak-rule {
+    padding: 0.85rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .showcase-act--pin {
+    height: auto !important;
+  }
+
+  .showcase-pin-stage {
+    position: relative;
+    height: auto;
+    padding-block: 4rem;
+  }
+
+  .showcase-pin-chrome {
+    position: relative;
+    top: auto;
+    inset-inline: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .pin-scene {
+    position: relative;
+    inset-inline: auto;
+    top: auto;
+    translate: none;
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: 3rem;
+  }
+}
